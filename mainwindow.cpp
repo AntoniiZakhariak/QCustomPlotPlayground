@@ -11,22 +11,28 @@ MainWindow::MainWindow(QWidget *parent)
     Multiplier2 = 1;
     Multiplier3 = 1;
 
-    ui->lineEdit1->setText(QString::number(Multiplier1));
-    ui->lineEdit2->setText(QString::number(Multiplier2));
-    ui->lineEdit3->setText(QString::number(Multiplier3));
+    ui->spinBox1->setValue(Multiplier2);
+    ui->spinBox2->setValue(Multiplier3);
+
+//    ui->lineEdit1->setText(QString::number(Multiplier1));
+//    ui->lineEdit2->setText(QString::number(Multiplier2));
+//    ui->lineEdit3->setText(QString::number(Multiplier3));
 
     DrawGraph1();
 }
 
 void MainWindow::on_myButton_clicked()
 {
-    bool ok;
-    Multiplier1 = ui->lineEdit1->text().toInt(&ok);
-    qDebug()<<"lineEdit1 ok"<<ok;
-    Multiplier2 = ui->lineEdit2->text().toInt(&ok);
-    qDebug()<<"lineEdit2 ok"<<ok;
-    Multiplier3 = ui->lineEdit3->text().toInt(&ok);
-    qDebug()<<"lineEdit3 ok"<<ok;
+//    bool ok;
+//    Multiplier1 = ui->lineEdit1->text().toInt(&ok);
+//    qDebug()<<"lineEdit1 ok"<<ok;
+//    Multiplier2 = ui->lineEdit2->text().toInt(&ok);
+//    qDebug()<<"lineEdit2 ok"<<ok;
+//    Multiplier3 = ui->lineEdit3->text().toInt(&ok);
+//    qDebug()<<"lineEdit3 ok"<<ok;
+
+    Multiplier2 = ui->spinBox1->value();
+    Multiplier3 = ui->spinBox2->value();
 
     DrawGraph1();
     ui->widget->replot();
